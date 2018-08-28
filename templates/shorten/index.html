@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Add a Link
+{% endblock title %}
+
+{% block content %}
+    <h1>Create a shortcut!</h1>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="url">
+            <button>Shorten URL</button>
+        </form>
+    </div>
+{% endblock content %}

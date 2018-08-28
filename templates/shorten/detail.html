@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Preview Link
+{% endblock title %}
+
+{% block content %}
+    <div>
+        <a href="http://localhost:8000/{{ url.code }}">http://localhost:8000/{{ url.code }}</a>
+    </div>
+    <div>
+        {{ url.url }}
+    </div>
+    <div>
+        <ul>
+            {% for click in url.clicks.all %}
+                <li>{{ click.referer }}: {{ click.ip }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
